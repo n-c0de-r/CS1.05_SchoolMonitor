@@ -92,11 +92,10 @@ public class AnimalMonitor
 	 */
 	public void printSightingsBy(int spotter)
 	{
-		for(Sighting record : sightings) {
-			if(record.getSpotter() == spotter) {
-				System.out.println(record.getDetails());
-			}
-		}
+		sightings.stream()
+				 .filter(record -> record.getSpotter() == spotter)
+				 .map(Sighting::getDetails)
+				 .forEach(System.out::println);
 	}
 	
 	/**

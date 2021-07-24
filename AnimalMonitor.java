@@ -49,6 +49,18 @@ public class AnimalMonitor
 				 .filter (record -> animal.equals(record.getAnimal()))
 				 .forEach(record -> System.out.println(record.getDetails()));
 	}
+	/**
+	 * Print the details of all the sightings of the given animal by day.
+	 * @param animal The type of animal.
+	 * @param dayID	 The ID number of a given day.
+	 */
+	public void printSightingsOfAnimalByDay(String animal, int dayID)
+	{
+		sightings.stream()
+				 .filter (record -> animal.equals(record.getAnimal()))
+				 .filter (record -> dayID == record.getPeriod())
+				 .forEach(record -> System.out.println(record.getDetails()));
+	}
 	
 	/**
 	 * Print the details of all the sightings of a given day.
@@ -81,7 +93,7 @@ public class AnimalMonitor
 	 * are considered to be dangerous.
 	 */
 	public void printEndangered(ArrayList<String> animalNames,
-				    int dangerThreshold)
+								int dangerThreshold)
 	{
 		for(String animal : animalNames) {
 			if(getCount(animal) <= dangerThreshold) {

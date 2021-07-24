@@ -34,12 +34,10 @@ public class AnimalMonitor
     /**
      * Print details of all the sightings.
      */
-    public void printList()
-    {
-        for(Sighting record : sightings) {
-            System.out.println(record.getDetails());
-        }
-    }
+	public void printList()
+	{
+    	sightings.forEach(record -> System.out.println(record.getDetails()));
+	}
     
     /**
      * Print the details of all the sightings of the given animal.

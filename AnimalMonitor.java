@@ -49,6 +49,18 @@ public class AnimalMonitor
 				 .filter (record -> animal.equals(record.getAnimal()))
 				 .forEach(record -> System.out.println(record.getDetails()));
 	}
+	
+	/**
+	 * Print the details of all the sightings of a given day.
+	 * @param dayID	The ID number of a given day.
+	 */
+	public void printSightingsByDay(int dayID)
+	{
+		sightings.stream()
+				 .filter (record -> dayID == record.getPeriod())
+				 .forEach(record -> System.out.println(record.getDetails()));
+	}
+	
 	/**
 	 * Print the details of all the sightings of the given animal by day.
 	 * @param animal The type of animal.
@@ -63,14 +75,15 @@ public class AnimalMonitor
 	}
 	
 	/**
-	 * Print the details of all the sightings of a given day.
-	 * @param dayID	The ID number of a given day.
+	 * Print the counts of all sightings of a particular animal.
 	 */
-	public void printSightingsByDay(int dayID)
+	public void printSightingsCount(String animal)
 	{
 		sightings.stream()
-				 .filter (record -> dayID == record.getPeriod())
-				 .forEach(record -> System.out.println(record.getDetails()));
+				 .filter(record -> animal.equals(record.getAnimal()))
+				 .map(record -> record.getCount())// here the change happens
+				 .forEach(count -> System.out.println("Counted " + animal +
+						 ": " + count + " times."));
 	}
 	
 	/**

@@ -45,11 +45,9 @@ public class AnimalMonitor
      */
     public void printSightingsOf(String animal)
     {
-        for(Sighting record : sightings) {
-            if(animal.equals(record.getAnimal())) {
-                System.out.println(record.getDetails());
-            }
-        }
+	    sightings.stream()
+		     .filter (record -> animal.equals(record.getAnimal()))
+		     .forEach(record -> System.out.println(record.getDetails()));
     }
     
     /**

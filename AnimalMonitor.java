@@ -75,6 +75,21 @@ public class AnimalMonitor
 	}
 	
 	/**
+	 * Print the details of all the sightings of the given spotter by day.
+	 * @param spotter	The ID of the spotter.
+	 * @param dayID		The ID number of a given day.
+	 */
+	public void printSightingsOfSpotterByDay(int spotter, int dayID)
+	{
+		sightings.stream()
+				 .filter(record -> record.getCount() > 0)
+				 .filter(record -> record.getSpotter() == spotter)
+				 .filter (record -> dayID == record.getPeriod())
+				 .map(Sighting::getDetails)
+				 .forEach(System.out::println);
+	}
+	
+	/**
 	 * Print the counts of all sightings of a particular animal.
 	 */
 	public void printSightingsCount(String animal)

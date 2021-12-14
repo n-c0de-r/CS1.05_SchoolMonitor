@@ -11,3 +11,5 @@ This project is part of the material for chapter 5 of the book
 This project is the starting version for lambda and stream exercises;
 here, the code is written in the traditional imperative style, using
 for-each and while loops.
+
+<img src="AnimalMonitor_show">

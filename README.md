@@ -1,15 +1,9 @@
-Project: animal-monitoring-v1
-Authors: David J. Barnes and Michael Kölling
-
-This project is part of the material for chapter 5 of the book
-
-   Objects First with Java - A Practical Introduction using BlueJ
-   Sixth edition
-   David J. Barnes and Michael Kölling
-   Pearson Education, 2016
-
 This project is the starting version for lambda and stream exercises;
 here, the code is written in the traditional imperative style, using
-for-each and while loops.
+for-each and while loops, and needs to be rewritten and extended
 
-<img src="AnimalMonitor_show.gif">
+Based on the original by David J. Barnes and Michael Kölling
+@author n-c0de-r
+@version 2023.02.06
+
+<img src="SchoolMonitor_show.gif">
